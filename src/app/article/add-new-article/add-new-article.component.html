@@ -1,0 +1,78 @@
+<!--Add New User popup-->
+<div class="userlist-popup mx-auto bg-white px-4 py-4 shadow-box rounded">
+  <div class="grid-b-space">
+    <h4 class="mb-0">Add New Article</h4>
+  </div>
+  <form [formGroup]="addNewArticleForm">
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" placeholder="designation" formControlName="designation">
+      <small
+        *ngIf="addNewArticleForm.controls['designation'].hasError('required') && addNewArticleForm.controls['designation'].touched"
+        class="text-danger">
+        You must include a designation.
+      </small>
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="number" placeholder="article price" formControlName="price">
+      <small
+        *ngIf="addNewArticleForm.controls['price'].hasError('required') && addNewArticleForm.controls['price'].touched"
+        class="text-danger">
+        You must include a price.
+      </small>
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="number" placeholder="stockQuantity" formControlName="price">
+      <small *ngIf="addNewArticleForm.controls['stockQuantity'].hasError('required') && addNewArticleForm.controls['stockQuantity'].touched"
+        class="text-danger">
+        You must include a stockQuantity.
+      </small>
+    </div>
+    <div class="form-group grid-b-space">
+      <select class="form-control h-auto p-cursor custom-select" formControlName="category">
+        <option>Cuisine</option>
+        <option>Enfant</option>
+        <option>Lorem</option>
+      </select>
+      <small *ngIf="addNewArticleForm.controls['category'].touched && !addNewArticleForm.controls['category'].valid">
+        <small *ngIf="addNewArticleForm.controls['category'].hasError('required')" class="text-danger">
+          You must Select a category Type.
+        </small>
+      </small>
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" placeholder="description" formControlName="description">
+      <small
+        *ngIf="addNewArticleForm.controls['description'].hasError('required') && addNewArticleForm.controls['description'].touched"
+        class="text-danger">
+        You must include a description.
+      </small>
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" placeholder="image" formControlName="description">
+      <small
+        *ngIf="addNewArticleForm.controls['imageName'].hasError('required') && addNewArticleForm.controls['imageName'].touched"
+        class="text-danger">
+        You must include a image of article.
+      </small>
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" placeholder="tva" formControlName="description">
+      <small
+        *ngIf="addNewArticleForm.controls['tva'].hasError('required') && addNewArticleForm.controls['tva'].touched"
+        class="text-danger">
+        You must include a tva.
+      </small>
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" placeholder="tauxRemise" formControlName="tauxRemise">
+      <small *ngIf="addNewArticleForm.controls['tauxRemise'].hasError('tauxRemise') && addNewArticleForm.controls['tauxRemise'].touched"
+        class="text-danger">
+        You must include a tva.
+      </small>
+    </div>
+  </form>
+  <div class="d-flex">
+    <button class="btn btn-lg bg-primary mr-3" (click)="activeModal.dismiss()">Close</button>
+    <button class="btn btn-lg bg-light" (click)="onFormSubmit()">Submit</button>
+  </div>
+</div>

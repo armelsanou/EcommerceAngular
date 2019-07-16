@@ -10,20 +10,20 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AuthService {
 
-	user 		  : Observable<firebase.User>;
-	userData   : any;
+user: Observable<firebase.User>;
+userData: any;
    isLoggedIn = false;
 
    constructor(private firebaseAuth: AngularFireAuth,
                private router : Router,
                private toastr: ToastrService) { 
-   	this.user = firebaseAuth.authState;
+this.user = firebaseAuth.authState;
    }
 
    /*
     *  getLocalStorageUser function is used to get local user profile data.
     */
-   getLocalStorageUser(){
+   /* getLocalStorageUser(){
       this.userData = JSON.parse(localStorage.getItem("userProfile"));
       if(this.userData) {
          this.isLoggedIn = true;
@@ -31,14 +31,13 @@ export class AuthService {
       } else {
          this.isLoggedIn = false;
          return false;
-      }    
-   }
-
-  	/*
+      }
+   } */
+/*
     * signupUserProfile method save email and password into firabse &
-    * signupUserProfile method save the user sign in data into local storage. 
+    * signupUserProfile method save the user sign in data into local storage.
     */
-   signupUserProfile(value) {
+  /*  signupUserProfile(value) {
     	this.firebaseAuth
    	.auth
       .createUserWithEmailAndPassword(value.email, value.password)
@@ -49,13 +48,13 @@ export class AuthService {
       })
       .catch(err => {
          this.toastr.error(err.message);
-      });    
-   }
+      });
+   } */
 
    /*
     * loginUser fuction used to login.
     */
-   loginUser(value) {
+/*    loginUser(value) {
       this.firebaseAuth
       .auth
       .signInWithEmailAndPassword(value.email,value.password)
@@ -67,12 +66,12 @@ export class AuthService {
       .catch(err => {
          this.toastr.error(err.message);
       });
-   }
+   } */
 
    /*
     * resetPassword is used to reset your password.
     */
-   resetPassword(value) {
+/*    resetPassword(value) {
       this.firebaseAuth.auth.sendPasswordResetEmail(value.email)
          .then(value => {
           	this.toastr.success("Email Sent");
@@ -81,12 +80,12 @@ export class AuthService {
          .catch(err => {
             this.toastr.error(err.message);
          });
-    }
+    } */
 
    /*
-    * logOut function is used to sign out . 
+    * logOut function is used to sign out .
     */
-   logOut() {
+  /*  logOut() {
       this.firebaseAuth
       .auth
       .signOut();
@@ -94,13 +93,13 @@ export class AuthService {
       this.isLoggedIn = false;
       this.toastr.success("You have been successfully logged out!");
       this.router.navigate(['/session/loginone']);
-   }   
+   }    */
 
    /*
     * setLocalUserProfile function is used to set local user profile data.
     */
-   setLocalUserProfile(value){
+  /*  setLocalUserProfile(value){
    	localStorage.setItem("userProfile", JSON.stringify(value));
       this.isLoggedIn = true;
-   }
+   } */
 }

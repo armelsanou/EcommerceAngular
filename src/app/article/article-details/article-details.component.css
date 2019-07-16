@@ -1,0 +1,8 @@
+li.list-inline-item.stylePerso {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex: 1 1 0%;
+}

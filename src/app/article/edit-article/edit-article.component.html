@@ -1,0 +1,40 @@
+<!--Edit User list-->
+<div class="userlist-popup bg-white px-4 py-4 shadow-box rounded mx-auto">
+  <div class="grid-b-space">
+    <h4 class="mb-0">Edit Article</h4>
+  </div>
+  <form [formGroup]="form">
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" formControlName="designation" placeholder="designation">
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="number" formControlName="price" placeholder="price">
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="number" formControlName="stockQuantity" placeholder="stockQuantity">
+    </div>
+    <div class="form-group grid-b-space">
+      <select class="form-control h-auto p-cursor custom-select" formControlName="category">
+        <option>Platinum</option>
+        <option>Gold</option>
+        <option>Service</option>
+      </select>
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" formControlName="description" placeholder="description">
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="file" formControlName="imageName" placeholder="imageName">
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" formControlName="tva" placeholder="tva">
+    </div>
+    <div class="form-group grid-b-space">
+      <input class="form-control" type="text" formControlName="tauxRemise" placeholder="tauxRemise">
+    </div>
+  </form>
+  <div class="d-flex">
+    <button class="btn btn-lg bg-primary mr-3" (click)="activeModal.dismiss()">Close</button>
+    <button class="btn btn-lg bg-light" (click)="onFormSubmit()">Submit</button>
+  </div>
+</div>

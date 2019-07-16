@@ -53,6 +53,8 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.js",
               "src/assets/js/bootstrap.js",
+              "src/assets/js/input-field.js",
+              "src/assets/js/scrolling-nav.js",
               "node_modules/hammerjs/hammer.js",
               "node_modules/sortablejs/Sortable.js",
               "node_modules/easy-pie-chart/dist/easypiechart.js",
